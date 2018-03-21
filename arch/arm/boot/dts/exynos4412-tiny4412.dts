@@ -81,7 +81,9 @@
 	bus-width = <4>;
 	pinctrl-0 = <&sd2_clk &sd2_cmd &sd2_cd &sd2_bus4>;
 	pinctrl-names = "default";
-	status = "okay";
+// mz8023yt@163.com 20180321 begin >>> [1/1] disable sd controller
+	status = "disabled";
+// mz8023yt@163.com 20180321 end   <<< [1/1] disable sd controller
 };
 
 &serial_0 {
