@@ -254,8 +254,11 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # "make" in the configured kernel build directory always uses that.
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
-ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
+
+# mz8023yt@163.com 20180321 begin >>> [1/1] modify the cross compiler
+ARCH		?= arm
+CROSS_COMPILE	?= /opt/gcc-arm-none-eabi-5_4-2016q3/bin/arm-none-eabi-
+# mz8023yt@163.com 20180321 end   <<< [1/1] modify the cross compiler
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
