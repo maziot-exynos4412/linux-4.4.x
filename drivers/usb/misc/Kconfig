@@ -249,6 +249,13 @@ config USB_HSIC_USB3503
        help
          This option enables support for SMSC USB3503 HSIC to USB 2.0 Driver.
 
+# mz8023yt@163.com 20180321 begin >>> [7/11] add usb net driver
+config USB_HSIC_USB4640
+	tristate "USB4640 HSIC to USB20 Driver"
+	help
+	  This option enables support for SMSC USB4640 HSIC to USB 2.0 Driver.
+# mz8023yt@163.com 20180321 end   <<< [7/11] add usb net driver
+
 config USB_LINK_LAYER_TEST
 	tristate "USB Link Layer Test driver"
 	help

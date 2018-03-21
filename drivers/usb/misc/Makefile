@@ -25,6 +25,11 @@ obj-$(CONFIG_USB_USS720)		+= uss720.o
 obj-$(CONFIG_USB_SEVSEG)		+= usbsevseg.o
 obj-$(CONFIG_USB_YUREX)			+= yurex.o
 obj-$(CONFIG_USB_HSIC_USB3503)		+= usb3503.o
+
+# mz8023yt@163.com 20180321 begin >>> [8/11] add usb net driver
+obj-$(CONFIG_USB_HSIC_USB4640)		+= usb4640.o
+# mz8023yt@163.com 20180321 end   <<< [8/11] add usb net driver
+
 obj-$(CONFIG_USB_CHAOSKEY)		+= chaoskey.o
 
 obj-$(CONFIG_USB_SISUSBVGA)		+= sisusbvga/
