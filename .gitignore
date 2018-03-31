@@ -38,6 +38,11 @@ Module.symvers
 *.dwo
 *.su
 
+# mz8023yt@163.com 20180331 begin >>> [1/1] ignore the uImage and dtb
+uImage
+exynos4412-tiny4412.dtb
+# mz8023yt@163.com 20180331 end   <<< [1/1] ignore the uImage and dtb
+
 #
 # Top-level generic files
 #
