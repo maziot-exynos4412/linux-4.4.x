@@ -1,6 +1,6 @@
 #!/bin/sh
 
-make -j24 uImage LOADADDR=0x40008000
+make -j8 uImage LOADADDR=0x40008000
 
 echo ""
 echo "\033[31m>>>>>>>>>>>>>>>>>>>>>>>>>>>> make uImage successful <<<<<<<<<<<<<<<<<<<<<<<<<<<<\033[0m"
