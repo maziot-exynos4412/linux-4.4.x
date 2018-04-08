@@ -36,7 +36,9 @@
 
 	leds {
 		compatible = "gpio-leds";
-
+// mz8023yt@163.com 20180403 begin >>> [1/2] realize the led driver
+		status = "disabled";
+// mz8023yt@163.com 20180403 end   <<< [1/2] realize the led driver
 		led1 {
 			label = "led1";
 			gpios = <&gpm4 0 GPIO_ACTIVE_LOW>;
@@ -83,6 +85,42 @@
 		initial-mode = <USB4640_MODE_HUB>;
 	};
 // mz8023yt@163.com 20180321 end   <<< [3/11] add usb net driver
+
+// mz8023yt@163.com 20180403 begin >>> [2/2] realize the led driver
+	maziot_leds {
+		compatible = "maziot,leds";
+		reg = <0x110002e0 0x10>;
+		tiny4412,gpio = <&gpm4 0 GPIO_ACTIVE_HIGH &gpm4 1 GPIO_ACTIVE_HIGH>;
+		pinctrl-names = "default", "gpio_sleep", "gpio_active";
+		pinctrl-0 = <&led_gpio_default>;
+		pinctrl-1 = <&led_gpio_sleep>;
+		pinctrl-2 = <&led_gpio_active>;
+	};
+};
+
+&pinctrl_1 {
+	led_gpio_default: led_gpio_default {
+		samsung,pins = "gpm4-0", "gpm4-1";
+		samsung,pin-function = <1>;
+		samsung,pin-pud = <1>;
+		samsung,pin-drv = <2>;
+	};
+
+	led_gpio_sleep: led_gpio_sleep {
+		samsung,pins = "gpm4-0", "gpm4-1";
+		samsung,pin-function = <1>;
+		samsung,pin-pud = <0>;
+		samsung,pin-drv = <0>;
+	};
+
+	led_gpio_active: led_gpio_active {
+		samsung,pins = "gpm4-0", "gpm4-1";
+		samsung,pin-function = <1>;
+		samsung,pin-pud = <3>;
+		samsung,pin-drv = <3>;
+	};
+// mz8023yt@163.com 20180403 end   <<< [2/2] realize the led driver
+
 };
 
 &rtc {

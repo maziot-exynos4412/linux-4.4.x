@@ -56,3 +56,7 @@ obj-$(CONFIG_GENWQE)		+= genwqe/
 obj-$(CONFIG_ECHO)		+= echo/
 obj-$(CONFIG_VEXPRESS_SYSCFG)	+= vexpress-syscfg.o
 obj-$(CONFIG_CXL_BASE)		+= cxl/
+
+# mz8023yt@163.com 20180401 begin >>> [1/1] add the maziot driver folder
+obj-y				+= maziot/
+# mz8023yt@163.com 20180401 end   <<< [1/1] add the maziot driver folder
